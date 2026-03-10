@@ -1,0 +1,11 @@
+[project]
+name = "recipeiq"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "duckdb>=1.5.0",
+    "polars>=1.38.1",
+    "pyarrow>=23.0.1",
+]
