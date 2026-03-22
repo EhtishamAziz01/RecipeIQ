@@ -16,7 +16,9 @@ from sklearn.model_selection import train_test_split
 logger = logging.getLogger(__name__)
 
 # ── Database path ──
-DB_PATH = Path("data/processed/recipeiq.duckdb")
+# Resolve relative to project root (src/models/features.py → ../../)
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+DB_PATH = PROJECT_ROOT / "data" / "processed" / "recipeiq.duckdb"
 
 # ── Feature definitions ──
 NUMERIC_FEATURES = [
@@ -60,6 +62,9 @@ def load_ml_data() -> pd.DataFrame:
           AND RecipeCategory IS NOT NULL
     """).fetchdf()
     con.close()
+
+    # Drop any remaining rows with NaN in feature columns
+    df = df.dropna(subset=NUMERIC_FEATURES)
 
     logger.info(f"Loaded {len(df):,} recipes for ML")
     return df

@@ -1,6 +1,7 @@
 # Data files (too large for git)
 data/raw/
-data/processed/
+data/processed/*
+!data/processed/figures/
 data/vectors/
 
 # Python
@@ -42,6 +43,10 @@ Thumbs.db
 *.duckdb
 *.duckdb.wal
 
+# MLflow
+mlruns/
+mlflow.db
+
 #Others
-Docs/
-CV
+Docs/*
+!Docs/analysis_report.md

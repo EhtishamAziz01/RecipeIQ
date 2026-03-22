@@ -22,7 +22,9 @@ st.set_page_config(
 
 # DATA LOADING WTIH CACHING
 
-DB_PATH = Path("data/processed/recipeiq.duckdb")
+# Resolve relative to project root (src/dashboard/app.py → ../../)
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+DB_PATH = PROJECT_ROOT / "data" / "processed" / "recipeiq.duckdb"
 
 @st.cache_data
 def load_recipes():

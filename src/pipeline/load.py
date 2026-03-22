@@ -17,7 +17,9 @@ import pandas as pd
 logger = logging.getLogger(__name__)
 
 # ── Constants ──
-DB_PATH = Path("data/processed/recipeiq.duckdb")
+# Resolve relative to project root (src/pipeline/load.py → ../../)
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+DB_PATH = PROJECT_ROOT / "data" / "processed" / "recipeiq.duckdb"
 
 def load_to_duckdb(
     recipes: pd.DataFrame,

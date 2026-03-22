@@ -1,3 +1,4 @@
+import html
 import logging
 import re
 from typing import Optional
@@ -61,6 +62,22 @@ def clean_recipes(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
 
     rows_before = len(df)
+
+    # Decode HTML entities in text columns (&amp; → &, &quot; → ", etc.)
+    # Loop until stable to handle multi-level encoding
+    def _unescape(val):
+        if not isinstance(val, str):
+            return val
+        prev = None
+        while prev != val:
+            prev = val
+            val = html.unescape(val)
+        return val
+
+    for col in ["Name", "Description"]:
+        if col in df.columns:
+            df[col] = df[col].apply(_unescape)
+    logger.info("Decoded HTML entities in Name, Description")
 
     # Parse R-style list columns
 

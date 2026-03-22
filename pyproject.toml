@@ -3,12 +3,19 @@ name = "recipeiq"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.13"
 dependencies = [
     "duckdb>=1.5.0",
     "ipykernel>=7.2.0",
     "jupyter>=1.1.1",
+    "matplotlib>=3.10.8",
+    "mlflow>=3.10.1",
     "numpy>=2.2.0",
-    "pandas>=3.0.1",
+    "pandas>=2.0",
+    "plotly>=6.6.0",
     "pyarrow>=23.0.1",
+    "scikit-learn>=1.8.0",
+    "seaborn>=0.13.2",
+    "streamlit>=1.40",
+    "xgboost>=3.2.0",
 ]
