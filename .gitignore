@@ -34,7 +34,6 @@ Thumbs.db
 
 # Models & large binaries
 *.pkl
-*.joblib
 *.h5
 *.pt
 *.onnx
@@ -46,6 +45,7 @@ Thumbs.db
 # MLflow
 mlruns/
 mlflow.db
+mlartifacts/
 
 #Others
 Docs/*

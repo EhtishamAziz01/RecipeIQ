@@ -1,0 +1,23 @@
+.venv/
+.git/
+.gitignore
+.env
+.DS_Store
+__pycache__/
+*.pyc
+
+# Data files (DuckDB is copied explicitly in Dockerfile)
+data/raw/
+data/vectors/
+
+# Dev stuff
+notebooks/
+Docs/
+tests/
+mlartifacts/
+mlflow.db
+*.ipynb
+
+# IDE
+.vscode/
+.idea/

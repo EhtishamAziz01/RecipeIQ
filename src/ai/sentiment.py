@@ -1,17 +1,5 @@
 """
 Sentiment analysis for recipe reviews — TF-IDF + Logistic Regression.
-
-Provides:
-    - Text preprocessing pipeline (HTML removal, stopwords, normalization)
-    - Sentiment labelling from ratings (positive / neutral / negative)
-    - Model training with class-weight balancing
-    - Batch prediction for scoring large review sets
-
-Usage:
-    from src.ai.sentiment import (
-        load_reviews, preprocess_text, rating_to_sentiment,
-        build_sentiment_model, predict_sentiment_batch,
-    )
 """
 
 import logging
@@ -110,14 +98,6 @@ def build_sentiment_model(
 ) -> tuple[TfidfVectorizer, LogisticRegression, np.ndarray]:
     """
     Build a TF-IDF + Logistic Regression sentiment classifier.
-
-    Args:
-        X_train: Series of preprocessed review texts.
-        y_train: Series of sentiment labels.
-        max_features: Number of TF-IDF features.
-
-    Returns:
-        (fitted TfidfVectorizer, fitted LogisticRegression, X_train_tfidf)
     """
     tfidf = TfidfVectorizer(
         max_features=max_features,
@@ -157,15 +137,6 @@ def predict_sentiment_batch(
 ) -> list[str]:
     """
     Score reviews in batches to avoid memory issues.
-
-    Args:
-        texts: Series of raw review texts (not preprocessed).
-        tfidf: Fitted TfidfVectorizer.
-        model: Fitted LogisticRegression.
-        batch_size: Number of reviews per batch.
-
-    Returns:
-        List of predicted sentiment labels.
     """
     sentiments = []
     for i in range(0, len(texts), batch_size):
