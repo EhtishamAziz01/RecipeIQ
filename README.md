@@ -157,7 +157,7 @@ uv run streamlit run src/dashboard/app.py
 uv run uvicorn src.api.main:app --reload --port 8000
 
 # MLflow experiment tracker
-uv run mlflow ui
+uv run mlflow ui --host 127.0.0.1 --allowed-hosts "127.0.0.1:*,localhost:*"
 
 # Build the vector store (one-time, ~5 min)
 uv run python -m src.ai.embeddings build
@@ -180,7 +180,7 @@ docker compose up --build
 
 ## Data
 
-The dataset is from Food.com (available on Kaggle):
+The dataset is from [Food.com Recipes and Reviews on Kaggle](https://www.kaggle.com/datasets/irkaal/foodcom-recipes-and-reviews):
 
 - **522,517 recipes** — names, categories, descriptions, nutrition, ingredients
 - **1,401,768 reviews** — ratings and review text
@@ -215,7 +215,7 @@ Each notebook imports from the corresponding `src/` module — notebooks handle 
 | K-Means Clusters | `clustering_kmeans.joblib` | Nutritional grouping |
 | Sentiment Classifier | `sentiment_classifier.joblib` | Review tone detection |
 
-All experiments tracked in MLflow — `uv run mlflow ui` to browse.
+All experiments tracked in MLflow — `uv run mlflow ui --host 127.0.0.1 --allowed-hosts "127.0.0.1:*,localhost:*"` to browse.
 
 ---
 
