@@ -12,8 +12,8 @@ An end-to-end food intelligence platform built on 960K+ recipes and 1.6M+ review
 | 4 | AI Engineer | Sentiment analysis + Gemini-powered recipe chatbot |
 
 ## Tech Stack
-- **Python 3.14** (uv)
-- **Polars** — data processing
+- **Python 3.12** (uv)
+- **Pandas / NumPy** — data processing
 - **DuckDB** — analytical database
 - **Prefect** — orchestration
 - **Streamlit** — dashboards

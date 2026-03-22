@@ -8,11 +8,11 @@ data/vectors/
 __pycache__/
 *.pyc
 *.pyo
-*.egg.info/
+*.egg-info/
 dist/
 build/
 
-# Enviroment variables (secrets)
+# Environment variables (secrets)
 .env
 
 # MLflow
@@ -28,3 +28,20 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+
+# Models & large binaries
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.onnx
+
+# DuckDB
+*.duckdb
+*.duckdb.wal
+
+#Others
+Docs/
+CV
