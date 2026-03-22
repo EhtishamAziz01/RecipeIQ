@@ -50,3 +50,4 @@ mlartifacts/
 #Others
 Docs/*
 !Docs/analysis_report.md
+!Docs/images/

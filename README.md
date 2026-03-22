@@ -19,6 +19,19 @@ I wanted a portfolio project that actually reflects what working with data looks
 
 ---
 
+## Screenshots
+
+### Streamlit Dashboard
+![Dashboard](Docs/images/dashboard.png)
+
+### FastAPI Documentation
+![API Docs](Docs/images/api-docs.png)
+
+### MLflow Experiment Tracking
+![MLflow](Docs/images/mlflow.png)
+
+---
+
 ## What's Inside
 
 ### Data Pipeline (`src/pipeline/`)
