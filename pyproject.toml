@@ -1,7 +1,7 @@
 [project]
 name = "recipeiq"
 version = "0.1.0"
-description = "Add your description here"
+description = "End-to-end food intelligence platform — ETL, ML models, RAG chatbot, and REST API for 522K+ recipes"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
